@@ -740,116 +740,77 @@ footer {
     .page-wrapper { padding: 10rem 4% 6rem; }
 }
 
-@media (max-width: 768px) {
-    html { font-size: 52%; }
-    
-    header .fa-bars { display: block; }
-
-    header .navbar {
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        background: #fff;
-        border-top: 1px solid #eee;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: 0.4s ease;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #toggler:checked ~ .navbar {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    header .navbar a {
-        margin: 1.5rem;
-        font-size: 2rem;
-    }
-
-    .home .content h3 { font-size: 4.5rem; }
-    
+/* --- FIX HP PRODUK --- */
+@media only screen and (max-width: 768px) {
     .product-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 1.2rem;
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 10px !important;
     }
     
-    .p-img { height: 24rem; } /* Naikin dari 22rem */
-    
-    .p-info { padding: 1.2rem; }
-    .p-info h3 { font-size: 1.5rem; }
-    
-    .p-desc {
-        font-size: 1.1rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-    
-    .price { font-size: 1.7rem; }
-    .add-btn { font-size: 1.2rem; padding: 0.9rem; }
-    
-    .input-row { grid-template-columns: 1fr; gap: 0; }
-}
-
-@media (max-width: 480px) {
-    html { font-size: 50%; }
-    
-    .page-wrapper { padding: 9rem 3% 4rem; }
-    
-    .product-grid { 
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    
-    .p-card { 
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
+    .p-card {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
     }
     
     .p-img { 
-        height: 20rem; /* Naikin dari 15rem ke 20rem */
+        height: 200px !important; 
+        min-height: 200px !important;
+        flex-shrink: 0 !important;
     }
     
     .p-info { 
-        padding: 1rem;
-        flex-grow: 1; /* Biar isi kartu ngisi sisa ruang */
-        display: flex;
-        flex-direction: column;
+        padding: 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 !important;
     }
     
     .p-info h3 { 
-        font-size: 1.3rem; 
-        margin-bottom: 0.4rem;
-        line-height: 1.2;
+        font-size: 13px !important; 
+        margin-bottom: 4px !important;
+        line-height: 1.2 !important;
     }
     
     .p-desc {
-        display: block; /* Munculin lagi */
-        font-size: 1rem;
-        color: #777;
-        margin: 0 0 0.6rem 0;
-        line-height: 1.3;
-        /* Potong 2 baris aja biar rapi */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        display: block !important;
+        font-size: 10px !important;
+        color: #666 !important;
+        margin: 0 0 6px 0 !important;
+        line-height: 1.3 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        height: 26px !important;
     }
     
     .price { 
-        font-size: 1.5rem; 
-        margin-top: auto; /* Dorong harga + tombol ke bawah */
+        font-size: 15px !important; 
+        margin-top: auto !important;
+        margin-bottom: 6px !important;
     }
     
     .add-btn { 
-        font-size: 1.1rem; 
-        padding: 0.8rem; 
-        margin-top: 0.8rem;
+        font-size: 11px !important; 
+        padding: 7px !important; 
+        margin-top: 0 !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .page-wrapper { padding: 90px 10px 40px !important; }
+    
+    .p-img { 
+        height: 170px !important; 
+        min-height: 170px !important;
     }
     
-    .contact-form { padding: 3rem 2rem; }
+    .p-info h3 { font-size: 12px !important; }
+    .p-desc { font-size: 9px !important; height: 24px !important; }
+    .price { font-size: 14px !important; }
+    .add-btn { font-size: 10px !important; padding: 6px !important; }
 }
 
 .checkout-grid {
