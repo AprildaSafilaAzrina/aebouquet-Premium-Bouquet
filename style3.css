@@ -733,7 +733,6 @@ footer {
     letter-spacing: 1px;
 }
 
-
 /* --- RESPONSIVE --- */
 @media (max-width: 991px) {
     html { font-size: 55%; }
@@ -742,6 +741,8 @@ footer {
 }
 
 @media (max-width: 768px) {
+    html { font-size: 52%; } /* 1rem = 8.3px */
+    
     header .fa-bars { display: block; }
 
     header .navbar {
@@ -768,34 +769,40 @@ footer {
     
     .product-grid { 
         grid-template-columns: repeat(2, 1fr); 
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
     
-    .p-img { height: 22rem; }
-    .p-info { padding: 1.5rem; }
-    .p-info h3 { font-size: 1.6rem; }
-    .price { font-size: 1.8rem; }
-    .add-btn { font-size: 1.2rem; padding: 1rem; }
+    .p-img { height: 20rem; }
+    .p-info { padding: 1.2rem; }
+    .p-info h3 { font-size: 1.5rem; }
+    .price { font-size: 1.7rem; }
+    .add-btn { font-size: 1.2rem; padding: 0.9rem; }
     
     .input-row { grid-template-columns: 1fr; gap: 0; }
 }
 
 @media (max-width: 480px) {
+    html { font-size: 50%; } /* 1rem = 8px */
+    
+    .page-wrapper { padding: 9rem 3% 4rem; }
+    
     .product-grid { 
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+        gap: 0.8rem;
     }
     
-    .p-img { height: 18rem; }
-    .p-info { padding: 1rem; }
-    .p-info h3 { font-size: 1.4rem; }
-    .price { font-size: 1.6rem; }
-    .add-btn { font-size: 1.1rem; padding: 0.8rem; }
+    .p-card { border-radius: 1rem; }
+    .p-img { height: 15rem; }
+    .p-info { padding: 0.8rem; }
+    .p-info h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .p-desc { display: none; } /* Sembunyiin deskripsi di HP kecil biar muat */
+    .price { font-size: 1.5rem; }
+    .add-btn { 
+        font-size: 1rem; 
+        padding: 0.7rem; 
+        margin-top: 1rem;
+    }
     
-    .contact-form { padding: 3rem 2rem; }
-}
-@media (max-width: 480px) {
-    .product-grid { grid-template-columns: 1fr; }
     .contact-form { padding: 3rem 2rem; }
 }
 
