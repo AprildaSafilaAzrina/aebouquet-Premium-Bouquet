@@ -741,7 +741,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    html { font-size: 52%; } /* 1rem = 8.3px */
+    html { font-size: 52%; }
     
     header .fa-bars { display: block; }
 
@@ -772,9 +772,19 @@ footer {
         gap: 1.2rem;
     }
     
-    .p-img { height: 20rem; }
+    .p-img { height: 24rem; } /* Naikin dari 22rem */
+    
     .p-info { padding: 1.2rem; }
     .p-info h3 { font-size: 1.5rem; }
+    
+    .p-desc {
+        font-size: 1.1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
     .price { font-size: 1.7rem; }
     .add-btn { font-size: 1.2rem; padding: 0.9rem; }
     
@@ -782,25 +792,61 @@ footer {
 }
 
 @media (max-width: 480px) {
-    html { font-size: 50%; } /* 1rem = 8px */
+    html { font-size: 50%; }
     
     .page-wrapper { padding: 9rem 3% 4rem; }
     
     .product-grid { 
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
+        gap: 1rem;
     }
     
-    .p-card { border-radius: 1rem; }
-    .p-img { height: 15rem; }
-    .p-info { padding: 0.8rem; }
-    .p-info h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-    .p-desc { display: none; } /* Sembunyiin deskripsi di HP kecil biar muat */
-    .price { font-size: 1.5rem; }
+    .p-card { 
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .p-img { 
+        height: 20rem; /* Naikin dari 15rem ke 20rem */
+    }
+    
+    .p-info { 
+        padding: 1rem;
+        flex-grow: 1; /* Biar isi kartu ngisi sisa ruang */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .p-info h3 { 
+        font-size: 1.3rem; 
+        margin-bottom: 0.4rem;
+        line-height: 1.2;
+    }
+    
+    .p-desc {
+        display: block; /* Munculin lagi */
+        font-size: 1rem;
+        color: #777;
+        margin: 0 0 0.6rem 0;
+        line-height: 1.3;
+        /* Potong 2 baris aja biar rapi */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    
+    .price { 
+        font-size: 1.5rem; 
+        margin-top: auto; /* Dorong harga + tombol ke bawah */
+    }
+    
     .add-btn { 
-        font-size: 1rem; 
-        padding: 0.7rem; 
-        margin-top: 1rem;
+        font-size: 1.1rem; 
+        padding: 0.8rem; 
+        margin-top: 0.8rem;
     }
     
     .contact-form { padding: 3rem 2rem; }
