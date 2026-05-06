@@ -735,62 +735,79 @@ footer {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 991px) {
+@media (max-width: 991px) {
     html { font-size: 55%; }
     header { padding: 1.5rem 4%; }
     .page-wrapper { padding: 10rem 4% 6rem; }
 }
 /* --- FIX KHUSUS PRODUK HP SAJA --- */
-@media screen and (max-width: 768px) {
-    /* Cuma ngecilin produk, navbar jangan ikut */
-    .products-bg .product-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 12px;
+@media (max-width: 768px) {
+    header .fa-bars { display: block; }
+
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #fff;
+        border-top: 1px solid #eee;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: 0.4s ease;
+        display: flex;
+        flex-direction: column;
     }
-    
-    .products-bg .p-img { 
-        height: 220px; 
+
+    #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
-    
-    .products-bg .p-info { 
-        padding: 12px;
+
+    header .navbar a {
+        margin: 1.5rem;
+        font-size: 2rem;
     }
-    
-    .products-bg .p-info h3 { 
-        font-size: 14px;
-        margin-bottom: 4px;
+
+    .home .content h3 { font-size: 4.5rem; }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom */
+        gap: 1.5rem; /* Perkecil jarak antar kartu agar lebih lega */
+        padding: 0 1rem;
     }
-    
-    .products-bg .p-desc {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-size: 11px;
-        color: #666;
-        margin: 0 0 8px 0;
-        line-height: 1.3;
+
+    .p-img {
+        height: 20rem; /* Kurangi tinggi gambar agar proporsional di layar HP */
     }
-    
-    .products-bg .price { 
-        font-size: 16px; 
-        margin-bottom: 8px;
+
+    .p-info {
+        padding: 1.5rem; /* Perkecil padding teks agar tidak terlalu memakan ruang */
     }
-    
-    .products-bg .add-btn { 
-        font-size: 12px; 
-        padding: 8px; 
+
+    .p-info h3 {
+        font-size: 1.6rem; /* Perkecil ukuran font judul produk */
+    }
+
+    .price {
+        font-size: 1.8rem; /* Perkecil ukuran font harga */
+    }
+
+    .add-btn {
+        padding: 0.8rem;
+        font-size: 1.2rem;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .products-bg .page-wrapper { padding: 90px 12px 40px; }
+/* Hapus atau ganti bagian ini */
+@media (max-width: 480px) {
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); /* Ganti dari 1fr menjadi repeat(2, 1fr) */
+        gap: 1rem; 
+    }
     
-    .products-bg .p-img { height: 180px; }
-    .products-bg .p-info h3 { font-size: 13px; }
-    .products-bg .p-desc { font-size: 10px; }
-    .products-bg .price { font-size: 15px; }
-    .products-bg .add-btn { font-size: 11px; padding: 7px; }
+    .p-img {
+        height: 18rem; /* Sesuaikan lagi tingginya untuk HP kecil */
+    }
+
+    .contact-form { padding: 3rem 2rem; }
 }
+
+
 .checkout-grid {
     display: block; 
 }
